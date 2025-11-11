@@ -1,0 +1,39 @@
+@charset "utf-8";
+body{
+  margin: 0;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+.news {
+  width: 50%;
+}
+
+.img-size{
+  width: 90%;
+}
+
+
+
+.img-size img{
+  max-width: 100%;
+
+}
+
+footer{
+  background-color: bisque;
+  height: 80px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
