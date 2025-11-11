@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="これは HTMLCSSの課題作品です。">
+  <title>PREGALO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&family=Zen+Antique&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header id="page-top">
+    <div class="top">
+      <div class="hero">
+        <h1 class="name">PREGALO</h1>
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="menu.html">MENU</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+
+      </div>
+    </div>
+
+
+  </header>
+
+  <div class="kabegami">
+    <p class="center2">
+      <span class="slide-in leftAnime">
+        <span class="slide-in_inner leftAnimeInner">Let's Have a boll</span>
+      </span>
+    </p>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script>
+    'use strict';
+
+    function slideAnime() {
+      $('.leftAnime').each(function () {
+        let elemPos = $(this).offset().top - 50;
+        let scroll = $(window).scrollTop();
+        let windowHeight = $(window).height();
+
+        if (scroll >= elemPos - windowHeight) {
+          $(this).addClass("slideAnimeLeftRight");
+          $(this).children(".leftAnimeInner").addClass("slideAnimeRightLeft");
+        } else {
+          $(this).removeClass("slideAnimeLeftRight");
+          $(this).children(".leftAnimeInner").removeClass(slideAnimeRightLeft);
+        }
+      });
+    }
+
+    $(window).scroll(function(){
+      slideAnime();
+    });
+  </script>
+  <footer>
+    <p>&copy; PREGALO</p>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</body>
+
+</html>

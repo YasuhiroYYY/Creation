@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>鬼退治～戦闘～</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="JavaScriptの作品です">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Yuji+Mai&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <section class="back2">
+    <p id="time">残り： <span id="timer"></span>秒</p>
+
+    <p id="question"></p>
+    <input type="text" id="ans_field" autocomplete="off">
+
+    <p class="player_hp">player's HP <span id="player_rehp">100</span> / 100</p>
+    <p class="enemy_hp">enemy's HP <span id="enemy_rehp">100</span> / 100</p>
+
+    <div class="player_attack" id="player"><img src="images/monogatari_momotarou.png" alt=""></div>
+
+    <div id="enemy"><img src="images/setsubun_oni_kowai.png" alt=""></div>
+
+
+  </section>
+
+  <script>
+    'use strict';
+
+    /*＝＝＝ input,textに最初からカーソルが当たっている。 ＝＝＝*/
+    document.getElementById('ans_field').focus();
+
+    /*=== 問題文を配列にして、ランダム数を使って、問題を出す。===*/
+    const questions = [
+      'わはは、わはは、わはは、わはは',
+      '明日は明日の風が吹く',
+      '世界陸上開幕',
+      'ラッパー270pxずれます',
+      'function()無名関数',
+      '酒癖が悪いと評判な私',
+      'Math.floor()',
+      'かえるぴょこぴょこ',
+      '努力できるは最大の武器！',
+    ];
+    let questionNum = Math.floor(Math.random() * 10);
+    let questionBun = questions[questionNum];
+    document.getElementById('question').textContent = questionBun;
+
+
+
+
+    /*＝＝＝＝＝＝ 次の問題を関数に ＝＝＝＝＝＝*/
+    function nextQuestion() {
+      questionNum = Math.floor(Math.random() * questions.length);
+      questionBun = questions[questionNum];
+      document.getElementById('question').textContent = questionBun;
+      document.getElementById('ans_field').value = '';
+    }//何故、『ans = '';』はダメ？
+
+
+    /*＝＝＝＝＝ ダメージを受けたとき光る ＝＝＝＝＝*/
+
+    const player = document.getElementById('player');
+    function playerBlinking() {
+      player.classList.add('player');
+    }
+
+    const enemy = document.getElementById('enemy');
+    function enemyBlinking() {
+      enemy.classList.add('enemy');
+    }
+
+
+
+    //＝＝＝＝ プレイヤーと敵のHPとダメージを設定する。＝＝＝＝＝
+
+    // let fullEnemyHp = 100;
+    let enemyHp = 100;
+    //ダメージを設定
+    let damage;
+
+    //プレイヤーのHPとダメージ
+
+    let playerHp = 100;
+
+    //プレイヤーにダメージを与える関数
+    function playerDamage() {
+      damage = Math.floor(Math.random() * 30) + 20;
+      playerHp -= damage;
+      const playerHpWindow = document.getElementById('player_rehp');
+      playerHpWindow.textContent = `${playerHp}`;
+      playerBlinking();
+      setTimeout(function () {
+        player.classList.remove('player');
+      }, 300);
+    };
+
+    //敵にダメージを与える関数
+    function enemyDamage() {
+
+      damage = Math.floor(Math.random() * 30) + 20;
+      enemyHp -= damage;
+      const enemyHpWindow = document.getElementById('enemy_rehp');
+      enemyHpWindow.textContent = `${enemyHp}`;
+      enemyBlinking();
+      setTimeout(function () {
+        enemy.classList.remove('enemy');
+      }, 300);
+    };
+
+
+
+    /*＝＝＝＝ enter keyを押して回答した時のプログラム＝＝＝＝ */
+    // 〇addEventListener、onclick()で対応不可能なので使用しました。
+    // 〇".isComposing === false"は変換するときのenter keyを押したときに
+    //  作動しないようにする為つけています。
+    ans_field.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && e.isComposing === false) {
+
+        questions.splice(questionNum, 1);//１度出た問題を削除
+        console.log(questions);
+        let ans = document.getElementById('ans_field').value;
+        //答えが正解していたらのダメージの分岐と制限時間の再開
+        if (questionBun === ans) {
+          playerMove();
+          enemyDamage();
+          sec = 10;
+        } else {
+          enemyMove();
+          playerDamage();
+          sec = 10;
+        }
+        //鬼とプレイヤーのHPが０以下になったときの分岐
+        if (enemyHp <= 0) {
+          window.alert('GAME CLEAR　ホームに戻ります。');
+          location.href = 'index.html';
+        } else if (playerHp <= 0) {
+          window.alert('GAME OVER　ホームに戻ります。');
+          location.href = 'index.html';
+        }
+        nextQuestion();
+      }
+    });
+
+
+    /*＝＝＝＝＝＝ 攻撃時の移動 ＝＝＝＝＝＝*/
+
+    let windowWidth = document.body.clientWidth;
+
+    function playerMove() {
+      let playerHontai = document.getElementById('player');
+      playerHontai.style.translate = `${windowWidth - 650}px`;
+      setTimeout(function () { playerHontai.style.removeProperty('translate') }
+        , 200);
+    }
+    function enemyMove() {
+      let enemyHontai = document.getElementById('enemy');
+      enemyHontai.style.translate = `-${windowWidth - 650}px`;
+      setTimeout(function () { enemyHontai.style.removeProperty('translate') }
+        , 200);
+    }
+
+
+    /*＝＝＝＝＝＝ カウントダウン１０秒 ＝＝＝＝＝＝＝*/
+    let sec = 10;
+    function tenCount() {
+      document.getElementById('timer').textContent = String(sec).padStart(2, '0');
+      if (sec >= 1) {
+        sec -= 1;
+        refresh();
+      } else if (sec === 0) {
+        sec = 10;
+        questions.splice(questionNum, 1);
+        enemyMove();
+        playerDamage();
+        nextQuestion();
+        if (playerHp <= 0) {
+          window.alert('GAME OVER　ホームに戻ります。');
+          location.href = 'index.html';
+        } else {
+          refresh();
+        }
+
+      }
+    }
+    function refresh() {
+      setTimeout(tenCount, 1000);
+    }
+    tenCount();
+
+
+  </script>
+</body>
+
+</html>

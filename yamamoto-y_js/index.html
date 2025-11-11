@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>そんなこんなで鬼退治!!</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="JavaScriptの作品です">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Yuji+Mai&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="back">
+    <div class="chara1"><img src="images/kousenju_couple.png" alt=""></div>
+    <div class="chara2"><img src="images/monogatari_momotarou.png" alt=""></div>
+    <div class="chara3"><img src="images/setsubun_oni_kowai.png" alt=""></div>
+
+    <p class="sonna">そんなこんなで</p>
+    <p class="onitaiji">鬼退治!!</p>
+
+    <div class="btn"><a href="typing.html" id="start">start</a></div>
+
+    <div class="text_container">
+      <h2>遊び方</h2>
+
+      <p>お題の文字を打ち込んでエンターキーを押せ！<br>
+        半角、全角、平仮名は平仮名、漢字は漢字、数字は数字だ！<br>
+        見事、鬼の体力を０にすればゲームクリアだ！</p>
+    </div>
+  </div>
+  <h3 id="sankou" class="sankou-zone">参考にしたサイト</h3>
+
+  <div id="allcite" class="unshow">
+    <h3 class="sankou-theme">『 参考にしたサイト 』</h3>
+    <cite><a href="https://web-tsuku.life/input-text-form-clear/" target="_blank">
+        フォームをクリア・空にする方法。input・textarea【Javascript】
+      </a></cite>
+
+    <cite><a href="https://mitsutano-oshiro.com/archives/1917#google_vignette" target="_blank">
+        時間差でフェードインさせる方法【animation】
+      </a></cite>
+
+    <cite><a href="https://developer.mozilla.org/ja/docs/Web/CSS/transform-origin" target="_blank">
+        transform-origin - CSS: カスケーディングスタイルシート | MDN
+      </a></cite>
+
+    <cite><a href="https://teratail.com/questions/188681" target="_blank">
+        クリックでclassを付与して数秒後にクラスを削除したい
+
+      </a></cite>
+
+    <cite><a href="https://www.nishishi.com/javascript-tips/form-focus.html" target="_blank">
+        テキスト入力欄に最初からカーソルを入れる(フォーカスを与える)方法 - JavaScript TIPSふぁくとりー
+      </a></cite>
+
+
+
+    <cite><a href="https://webfrontend.ninja/js-input-ime-enter/" target="_blank">
+        【JavaScript】入力フォームで IME 確定時の Enter 誤判定を何とかする
+      </a></cite>
+    <cite><a href="https://developer.mozilla.org/ja/docs/Web/API/CSSStyleDeclaration/removeProperty" target="_blank">
+        CSSStyleDeclaration.removeProperty() - Web API - MDN
+      </a></cite>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    'use strict';
+
+    $('#sankou').on('click', function () {
+      $('#allcite').toggleClass('unshow');
+
+    });
+
+
+  </script>
+</body>
+
+</html>

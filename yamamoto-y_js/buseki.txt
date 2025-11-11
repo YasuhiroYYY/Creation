@@ -1,0 +1,17 @@
+//text.value = '';
+https://www.google.com/search?q=javascript+input+type%3Dtext+%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%97%E3%81%9F%E3%82%89+%E4%B8%AD%E8%BA%AB%E3%81%8C%E5%89%8A%E9%99%A4&sca_esv=6171a225f406e3e6&rlz=1C5CHFA_enJP937JP938&sxsrf=AE3TifOElUnoIM7Nra0Ig2ta_iTqLOfAGg%3A1757740253834&ei=3fzEaJnQMsO2vr0P3Ie5yAc&ved=0ahUKEwjZsr_b_NSPAxVDm68BHdxDDnkQ4dUDCBA&uact=5&oq=javascript+input+type%3Dtext+%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%81%97%E3%81%9F%E3%82%89+%E4%B8%AD%E8%BA%AB%E3%81%8C%E5%89%8A%E9%99%A4&gs_lp=Egxnd3Mtd2l6LXNlcnAiTGphdmFzY3JpcHQgaW5wdXQgdHlwZT10ZXh0IOODnOOCv-ODs-OCkuOCr-ODquODg-OCr-OBl-OBn-OCiSDkuK3ouqvjgYzliYrpmaQyBRAhGKABSMrzAVDtB1iW7wFwBHgAkAEAmAG4AaAB4yuqAQUxMi4zNrgBA8gBAPgBAZgCL6AC1yjCAgoQABiwAxjWBBhHwgIIEAAYogQYiQXCAgUQABjvBcICBxAjGLACGCfCAgYQIRgKGCrCAggQABiABBiiBMICCBAhGKABGMMEmAMAiAYBkAYKkgcEOC4zOaAH1poBsgcENC4zObgHxSjCBwcwLjE4LjI5yAegAQ&sclient=gws-wiz-serp
+
+//addeventlistner 
+https://webfrontend.ninja/js-input-ime-enter/
+
+//animation
+https://www.google.com/search?q=%EF%BD%83%EF%BD%93%EF%BD%93+%E9%81%85%E3%82%89%E3%81%9B%E3%81%A6%E7%99%BB%E5%A0%B4%E3%81%95%E3%81%9B%E3%81%9F%E3%81%84&rlz=1C5CHFA_enJP937JP938&oq=%EF%BD%83%EF%BD%93%EF%BD%93%E3%80%80%E9%81%85%E3%82%89%E3%81%9B%E3%81%A6%E7%99%BB%E5%A0%B4%E3%81%95%E3%81%9B%E3%81%9F%E3%81%84&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABjvBTIKCAIQABiiBBiJBTIKCAMQABiiBBiJBTIKCAQQABiABBiiBDIHCAUQABjvBdIBCTE0NTQ2ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8&zx=1757689828492&no_sw_cr=1
+
+//transform-origin
+https://developer.mozilla.org/ja/docs/Web/CSS/transform-origin
+
+
+https://teratail.com/questions/188681
+
+
+https://www.nishishi.com/javascript-tips/form-focus.html

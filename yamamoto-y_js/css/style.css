@@ -1,0 +1,456 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.back {
+  background-image: url(../images/haikei.jpg);
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  position: relative;
+}
+
+
+
+.chara1 {
+  position: absolute;
+  left: 10%;
+  bottom: 7%;
+  width: 216px;
+  height: auto;
+  animation: fadeIn1 .5s 1s forwards;
+  translate: 0 -300px;
+  opacity: 0;
+}
+
+/* １番目左下のキャラ */
+@keyframes fadeIn1 {
+  100% {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+.chara2 {
+  position: absolute;
+  right: 10%;
+  bottom: 8%;
+  width: 200px;
+  height: auto;
+  animation: fadeIn2 .5s 1.2s forwards;
+  translate: 0 -300px;
+  opacity: 0;
+}
+
+/* ２番目右下のキャラ出現 */
+@keyframes fadeIn2 {
+  100% {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+.chara3 {
+  position: absolute;
+  left: 46%;
+  top: 37%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: auto;
+  transform-origin: 0px 7px;
+
+  translate: 0 -300px;
+  opacity: 0;
+  animation:
+    fadeIn3 .5s 1.4s forwards,
+    wakuwaku 4s 5s infinite,
+    pyonpyon 2s 5s linear infinite;
+
+}
+
+/* ３番目に鬼出現 */
+@keyframes fadeIn3 {
+  100% {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+/* 鬼の横揺れ */
+@keyframes wakuwaku {
+  25% {
+    rotate: 30deg;
+  }
+
+  75% {
+    rotate: -30deg;
+  }
+
+}
+
+/* 鬼の大きさ移行 */
+@keyframes pyonpyon {
+  33% {
+    scale: 1.2;
+  }
+
+  66% {
+    scale: 0.8;
+  }
+
+}
+
+
+.chara1 img,
+.chara2 img,
+.chara3 img {
+  max-width: 100%;
+}
+
+.text_container {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  background: #22090eb0;
+  color: #fff6f6;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 5;
+}
+
+.text_container h1 {
+  color: #fff;
+  font-size: 24px;
+}
+
+.sonna {
+  position: absolute;
+  top: 12%;
+  left: 3%;
+  font-size: 53px;
+  transform: rotate(-14deg);
+  font-family: "RocknRoll One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  animation: fadeIn4 .5s 1.6s forwards;
+  translate: 0 -300px;
+  opacity: 0;
+}
+
+/* ４番目、左上の文字出現 */
+@keyframes fadeIn4 {
+  100% {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+.onitaiji {
+  position: absolute;
+  top: 9%;
+  right: 2%;
+  font-size: 100px;
+  transform: rotate(-23deg);
+  font-family: "Yuji Mai", serif;
+  font-weight: 400;
+  font-style: normal;
+  animation: fadeIn5 1s ease-in 3s forwards;
+  translate: -80% 65%;
+  scale: 4;
+  opacity: 0;
+}
+
+/* ５番目、右上「鬼退治」出現 */
+@keyframes fadeIn5 {
+  100% {
+    translate: 0;
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.btn a {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  transform: translate(-50%, -50%);
+  padding: 0 10px;
+  font-size: 28px;
+  letter-spacing: 1.5px;
+  background-color: #22090eb0;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  border: 5px double #d87f77fc;
+  animation: fadeIn6 .5s 5s forwards;
+  opacity: 0;
+}
+
+.btn a:hover {
+  background-color: #22090e45;
+  transition: background-color .3s;
+}
+
+.text_container {
+  border: 5px double #d87f77fc;
+  animation: fadeIn6 .5s 5s forwards;
+  opacity: 0;
+}
+
+
+/* ６番目、スタートと遊び方出現 */
+@keyframes fadeIn6 {
+  100% {
+    opacity: 1;
+  }
+}
+
+.text_container h2 {
+  font-family: "RocknRoll One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 2px;
+}
+
+.text_container p {
+  font-family: "RocknRoll One", sans-serif;
+  margin-top: 20px;
+  font-size: 16px;
+  /* line-height: 24px; */
+  letter-spacing: 0.7px;
+}
+
+/*＝＝＝＝＝ 参考文献 ＝＝＝＝＝*/
+#sankou {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 5px 20px;
+  background-color: #f9f0f0ad;
+  font-weight: normal;
+  font-family: "RocknRoll One", sans-serif;
+  border-radius: 20px;
+  color: #bf3838;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn6 .5s 5s forwards
+}
+
+/* .sankou-zone{
+  opacity: 0;
+  animation: fadeIn6 .5s 5s forwards
+} */
+
+/* #sankou:hover {
+  opacity: .5;
+  transition: opacity .5s;
+} */
+
+cite {
+  display: block;
+  margin-top: 25px;
+}
+
+cite::before {
+  content: "⁂";
+}
+
+.sankou-theme {
+  font-size: 24px;
+}
+
+#allcite {
+  position: absolute;
+  left: 50%;
+  top: 57%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+
+  background-color: #eeb8b8ed;
+  padding: 20px;
+  border-radius: 15px;
+  z-index: 55;
+
+}
+
+.unshow {
+  display: none;
+}
+
+
+
+/*=========== typing.html ========== */
+.back2 {
+  background-image: url(../images/haikei.jpg);
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  position: relative;
+}
+
+.back2 #question {
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  font-size: 20px;
+  padding: 10px;
+  background-color: #22090eb0;
+  color: #fff;
+  border: 5px double #ec5447fc;
+}
+
+.back2 input {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 10px;
+  background-color: #22090eb0;
+  color: #fff;
+  border: 5px double #d87f77fc;
+}
+
+#player {
+  position: absolute;
+  left: 10%;
+  bottom: 6%;
+  width: 200px;
+  height: auto;
+}
+
+#player img,
+#enemy img {
+  max-width: 100%;
+}
+
+#enemy {
+  position: absolute;
+  right: 7%;
+  bottom: 1%;
+  width: 350px;
+  height: auto;
+}
+
+.player_hp {
+  position: absolute;
+  left: 7%;
+  bottom:40%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.enemy_hp {
+  position: absolute;
+  right: 6%;
+  bottom: 50%;
+  color: #fff;
+  font-weight: bold;
+  z-index: 50;
+  font-size: 20px;
+}
+
+.player {
+  animation: playerBlinking .3s linear;
+}
+
+@keyframes playerBlinking {
+  25% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.enemy {
+  animation: enemyBlinking .3s linear;
+}
+
+@keyframes enemyBlinking {
+  25% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* #player{
+  animation: patack .2s;
+}
+@keyframes patack{
+  50% {
+    translate: 100px;
+  }
+} */
+
+
+/* カウントダウン */
+#time {
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+#timer {
+  font-size: 46px;
+}
+
+.b-2 {
+  width: 90%;
+  height: 200px;
+  border: 1px dashed red;
+  background-color: #d87f77fc;
+  margin: 0 auto;
+}
+
+/* 
+.b-1{
+  width: 300px;
+  height: 300px;
+  border: 1px solid;
+  background-color: #f9f0f0ad;
+  margin: auto auto;
+} */
