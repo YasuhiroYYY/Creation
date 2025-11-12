@@ -1,6 +1,13 @@
 @charset "utf-8";
-body{
+
+
+body,h1,h2,h3,p,div,footer{
   margin: 0;
+  padding: 0;
+}
+
+.theme {
+  font-family: serif;
 }
 
 .wrapper {
@@ -11,14 +18,25 @@ body{
 .container {
   display: flex;
   gap: 40px;
+  margin-top: 40px;
 }
 
 .news {
   width: 50%;
 }
 
+.news h3{
+  font-family: serif;
+}
+
+.news p{
+  font-size: 16px;
+}
+
 .img-size{
   width: 90%;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 
@@ -31,6 +49,7 @@ body{
 footer{
   background-color: bisque;
   height: 80px;
+  margin-top: 40px;
 
   display: flex;
   justify-content: center;
